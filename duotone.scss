@@ -1,0 +1,138 @@
+@mixin duotoneInline($color, $contrast, $mix-blend-mode) {
+  background: $color;
+  position: relative;
+
+  img {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+
+  // Browsers that don't support mix-blend-mode get the main color as background color on parent's :before element, and img gets 50% opacity.
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:before {
+    opacity: 0.1;
+  }
+
+  &:after {
+    background-color: black;
+    opacity: 0.5;
+  }
+
+  img {
+    opacity: 0.5;
+  }
+
+  // Suports our duo tone properties
+  @supports (mix-blend-mode: $mix-blend-mode) {
+    &:after {
+      content: none;
+    }
+
+    &:before {
+      content: none;
+    }
+
+    img {
+      filter: grayscale(100%) contrast($contrast);
+      mix-blend-mode: $mix-blend-mode;
+      opacity: 1;
+    }
+  }
+}
+
+// Background image
+@mixin duoToneBg($color, $contrast, $mix-blend-mode) {
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &::after {
+    background-color: black;
+    opacity: 0.5;
+  }
+
+  &::before {
+    background-color: $color;
+  }
+
+  .duotone-bg-img {
+    overflow: hidden;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: inherit;
+      height: inherit;
+    }
+  }
+
+  @supports (mix-blend-mode: $mix-blend-mode) {
+    &::after {
+      content: none;
+    }
+
+    .duotone-bg-img {
+      filter: grayscale(100%) contrast($contrast);
+      mix-blend-mode: $mix-blend-mode;
+      opacity: 1;
+      width: 100%;
+    }
+  }
+}
+
+// Example classes/placeholders for duotone
+.duotone-bg-img-container {
+  &--darkred {
+    @include duoToneBg(#d42747, 1.1, multiply);
+  }
+
+  &--darkblue {
+    @include duoToneBg(#0063bb, 1.1, multiply);
+  }
+
+  &--green {
+    @include duoToneBg(#2eb27a, 1.1, multiply);
+  }
+}
+
+.duotone-inline-img-container {
+  &--darkblue {
+    @include duotoneInline(#0061b8, 1.1, multiply);
+  }
+
+  &--darkred {
+    @include duotoneInline(#d42747, 1.1, multiply);
+  }
+
+  &--green {
+    @include duotoneInline(#2eb27a, 1.1, multiply);
+  }
+}
+
+.ht-500 {
+  height: 500px;
+}
