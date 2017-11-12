@@ -18,7 +18,7 @@ HTML
 
 <!-- Inline Image -->
 <div class="img-container duotone-inline-img-container--darkblue">
-  <img src="/images/my-inline-image.jpg" alt="">
+  <img src="https://images.unsplash.com/photo-1493849749377-e4f82d0a8319?auto=format&fit=crop&w=748&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
 </div>
 ```
 
