@@ -3,7 +3,7 @@ Sass mixins to create a duotone effect on both inline and background images.
 
 These mixins take advantage of the `mix-blend-mode` and `filter` CSS properties.  The mixins allow you to choose a main color, contrast value, and a mix-blend mode.
 
-It includes a fallback for browsers that don't support the `filter` and 'mix-blend-mode` css properties.
+It includes a fallback for browsers that don't support the `filter` and `mix-blend-mode` css properties.
 
 ## Example
 
