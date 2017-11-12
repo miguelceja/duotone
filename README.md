@@ -5,6 +5,7 @@ These mixins take advantage of the `mix-blend-mode` and `filter` CSS properties.
 
 It includes a fallback for browsers that don't support the `filter` and 'mix-blend-mode` css properties.
 
+See example on [Codepen](https://codepen.io/miguelceja/pen/pdPwwX)
 
 
 HTML
