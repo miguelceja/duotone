@@ -22,7 +22,7 @@ HTML
 </div>
 ```
 
-CSS
+Sass
 ```scss
 .duotone-bg-img-container {
   &--darkred {
