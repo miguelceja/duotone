@@ -10,7 +10,7 @@ It includes a fallback for browsers that don't support the `filter` and `mix-ble
 Example also on [Codepen](https://codepen.io/miguelceja/pen/pdPwwX).
 
 HTML
-```
+```html
 <!-- BG Image -->
 <div class="img-container duotone-bg-img-container--green">
   <div class="duotone-bg-img" style="background-image: url(https://images.unsplash.com/photo-1493849749377-e4f82d0a8319?auto=format&fit=crop&w=748&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);"></div>
@@ -23,7 +23,7 @@ HTML
 ```
 
 CSS
-```
+```scss
 .duotone-bg-img-container {
   &--darkred {
     @include duoToneBg(#d42747, 1.1, multiply);
